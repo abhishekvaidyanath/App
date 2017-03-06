@@ -1,7 +1,7 @@
 function fbShare(){
 	window.plugins.socialsharing.shareViaFacebook('Message via Facebook', 
                                                  null /* img */, 
-                                                 null /* url */, 
+                                                 'http://facebook.com/' /* url */, 
                                                  null, 
                                                  function(errormsg){alert("Error: Cannot Share")}
                                                  );
@@ -10,7 +10,7 @@ function fbShare(){
 function whatsappShare(){
 	window.plugins.socialsharing.shareViaWhatsApp('Message via WhatsApp',
                                                  null /* img */,
-                                                 "http://pointdeveloper.com/" /* url */, 
+                                                 'http://whatsapp.com/' /* url */, 
                                                  null, 
                                                  function(errormsg){alert("Error: Cannot Share")}
                                                  );
