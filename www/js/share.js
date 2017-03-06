@@ -1,7 +1,12 @@
 function fbShare(){
 	window.plugins.socialsharing.shareViaFacebook('Message via Facebook', 
                                                  null /* img */, 
-                                                 'http://facebook.com/' /* url */, 
+                                                function getPhoto(source) {
+      // Retrieve image file location from specified source
+      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
+        destinationType: destinationType.FILE_URI,
+        sourceType: source });
+    }, 
                                                  null, 
                                                  function(errormsg){alert("Error: Cannot Share")}
                                                  );
@@ -10,7 +15,12 @@ function fbShare(){
 function whatsappShare(){
 	window.plugins.socialsharing.shareViaWhatsApp('Message via WhatsApp',
                                                  null /* img */,
-                                                 'http://whatsapp.com/' /* url */, 
+                                                function getPhoto(source) {
+      // Retrieve image file location from specified source
+      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
+        destinationType: destinationType.FILE_URI,
+        sourceType: source });
+    }, 
                                                  null, 
                                                  function(errormsg){alert("Error: Cannot Share")}
                                                  );
@@ -19,7 +29,12 @@ function whatsappShare(){
 function twitterShare(){
 	 window.plugins.socialsharing.shareViaTwitter('Message via Twitter',
                                                  null /* img */, 
-                                                 'http://twitter.com/', 
+                                                function getPhoto(source) {
+      // Retrieve image file location from specified source
+      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
+        destinationType: destinationType.FILE_URI,
+        sourceType: source });
+    }, 
                                                  null, 
                                                  function(errormsg){alert("Error: Cannot Share")}
                                                  );
